@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: mydb1
+  name: mydb1
+spec:
+  containers:
+  - env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: {{ .Values.data_base_root_pass }} 
+    - name: MYSQL_DATABASE
+      value: {{ .Values.data_base_name }}
+    - name: MYSQL_USER
+      value: {{ .Values.user }}
+    - name: MYSQL_PASSWORD
+      value: {{ .Values.data_base_pass }}
+    image: {{ .Values.sql_image }}
+    name: {{ .Values.sql_db_name }}
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

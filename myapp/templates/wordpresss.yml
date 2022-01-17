@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: {{ .Values.wordpress }}
+  name: {{ .Values.wordpress }}
+spec:
+  containers:
+  - image: {{ .Values.wordpress_image }} 
+    name: {{ .Values.wordpress }}
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
