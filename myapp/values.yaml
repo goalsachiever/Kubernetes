@@ -1,8 +1,0 @@
-wordpress: mywp1
-data_base_root_pass: redhat
-data_base_name: wpdb
-user: amit
-data_base_pass: redhat
-sql_image: mysql:5.7
-sql_db_name: mydb1
-wordpress_image: wordpress:5.1.1-php7.3-apache 
